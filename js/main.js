@@ -6,6 +6,7 @@ feather.replace();
 // @ts-ignore
 $('.carousel').carousel({
 	touch: true,
+	interval: 3000,
 });
 
 //Video resize JQuery version

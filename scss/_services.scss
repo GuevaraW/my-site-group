@@ -1,14 +1,14 @@
 #services-section {
-	margin: 4rem auto;
+	margin: 3rem auto;
 	.icon {
 		display: block;
 		margin: 0.2em auto;
-		color: $dark-color;
 		text-align: center;
+		color: $primary-color;
 	}
 }
 .service {
-	color: $primary-color;
+	color: $dark-color;
 	text-align: center;
 }
 

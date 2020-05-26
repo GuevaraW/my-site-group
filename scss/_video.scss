@@ -3,22 +3,37 @@
 		text-align: center;
 	}
 }
+
+.title-max {
+	font-size: 42px;
+	font-weight: 800;
+	margin: 0;
+}
+
 .video-wrapper {
 	align-items: center;
-	.col-lg-7 {
-		padding-right: 0px;
-		padding-left: 0px;
-	}
 	.iframe {
-		max-height: 60vh;
+		max-height: 50vh;
 	}
 	.video-text {
-		background-color: $primary-color;
-		padding: 1.5em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 4em;
+		text-align: justify;
+		span {
+			display: block;
+			font-size: 1.2em;
+			padding-bottom: 0.5em;
+			font-weight: bold;
+		}
 	}
 }
 @media screen and (min-width: 992px) {
-	.video-text {
-		height: 60vh;
+	.video-wrapper {
+		.video-text {
+			height: 60vh;
+			padding: 5%;
+		}
 	}
 }
