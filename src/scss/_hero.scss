@@ -61,7 +61,7 @@
 	}
 }
 
-@media screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {
 	#home-section {
 		.welcome,
 		.btn-hero,
@@ -70,6 +70,7 @@
 			padding: 0 2rem 0 0rem;
 		}
 	}
+
 	.slide-content {
 		align-items: center;
 		.text-vertical {

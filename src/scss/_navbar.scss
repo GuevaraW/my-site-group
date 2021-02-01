@@ -29,6 +29,12 @@
 	}
 }
 
+.navbar-header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
 @media screen and (min-width: 992px) {
 	#mainNavbar {
 		background-color: rgba($color: white, $alpha: 0.95);
@@ -66,10 +72,4 @@
 			}
 		}
 	}
-}
-
-.navbar-header {
-	position: sticky;
-	top: 0;
-	z-index: 1000;
 }
