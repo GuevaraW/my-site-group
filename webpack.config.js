@@ -14,37 +14,62 @@ const webpack = require('webpack');
  *
  */
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	mode: 'development',
 
 	entry: {
-		index: './src/index.js',
+		app: './src/app.js',
+		loan: './src/js/loan.js',
 	},
 
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: '[name].js',
+		filename: 'js/[name].js',
 	},
 
 	devtool: 'source-map',
 
+	resolve: {
+		extensions: ['.js'],
+	},
+
 	module: {
 		rules: [
 			{
+				test: /.jsX?$/,
+				use: ['babel-loader'],
+				exclude: /node_modules/,
+			},
+			{
+				test: /.(hbs|handlebars)$/,
+				use: ['handlebars-loader'],
+			},
+			{
 				test: /.(scss|css)$/,
 				use: [
-					{ loader: MiniCssExtractPlugin.loader },
-					{ loader: 'style-loader' },
+					MiniCssExtractPlugin.loader,
 					{
 						loader: 'css-loader',
 						options: {
 							sourceMap: true,
 						},
 					},
+					// {
+					// 	loader: 'postcss-loader',
+					// 	options: {
+					// 		autoprefixer: {
+					// 			browser: ['last 2 versions'],
+					// 		},
+					// 		plugins: () => {
+					// 			autoprefixer;
+					// 		},
+					// 	},
+					// },
 					{
 						loader: 'sass-loader',
 						options: {
@@ -52,34 +77,42 @@ module.exports = {
 						},
 					},
 				],
-
-				test: /.jsX?$/,
-				use: ['babel-loader'],
-				exclude: /node_modules/,
-
-				test: /.html$/,
-				use: 'html-loader',
+			},
+			{
+				test: /.(jpe?g|gif|png)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'images/',
+							useRelativePath: true,
+						},
+					},
+				],
 			},
 		],
 	},
 
 	plugins: [
-		new HtmlWebpackPlugin({ template: './src/index.html' }),
 		new webpack.ProgressPlugin(),
-		new MiniCssExtractPlugin({ filename: 'main.[contenthash].css' }),
+		new CleanWebpackPlugin(),
+		new MiniCssExtractPlugin({ filename: 'css/[name].css' }),
+		new HtmlWebpackPlugin({
+			filename: 'index.html',
+			template: './src/templates/index.hbs',
+			chunks: ['app'],
+		}),
 	],
-
-	resolve: {
-		extensions: ['.js'],
-	},
 
 	target: 'web',
 
 	devServer: {
-		contentBase: path.resolve(__dirname, 'dist'),
+		contentBase: 'dist',
 		compress: true,
-		hot: true,
 		port: 5000,
+		watchContentBase: true,
+		hot: true,
 	},
 
 	optimization: {
