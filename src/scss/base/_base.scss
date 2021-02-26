@@ -1,0 +1,49 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	font-family: $font-stack;
+	background: $gray;
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 400;
+	color: $dark-color;
+	width: 100%;
+}
+
+h1 {
+	font-size: 32px;
+}
+h2 {
+	font-size: 30px;
+}
+h3 {
+	font-size: 26px;
+}
+
+label {
+	font-size: 1rem;
+}
+
+
+.hidden {
+	display: none;
+}
+
+@media screen and (min-width: 992px) {
+	body {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	body {
+		line-height: 1.6;
+	}
+
+	h1 {
+		font-size: 42px;
+	}
+}

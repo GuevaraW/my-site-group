@@ -1,0 +1,28 @@
+.about {
+	margin: 2rem auto;
+}
+
+.about-img {
+	width: 100%;
+	margin-bottom: 1em;
+	img {
+		width: 100%;
+	}
+}
+
+.title {
+	padding: 2rem 0;
+	font-weight: 800;
+	text-align: center;
+}
+
+.text-strong p {
+	font-size: 1.2em;
+	text-align: justify;
+}
+
+@media screen and (min-width: 1200px) {
+	.text-strong {
+		padding: 1.5em;
+	}
+}

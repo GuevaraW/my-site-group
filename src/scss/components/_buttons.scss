@@ -1,0 +1,33 @@
+
+.btn-principal {
+	padding: 0.5rem 1.2rem;
+	color: #fff;
+	background: $gradient-strong;
+	border-radius: 30px;
+	outline: none;
+	transition: all 0.1s ease-in;
+	&:hover {
+		color: $gray;
+	}
+	&:focus {
+		box-shadow: 0 0 1px 1px $gray;
+	}
+	&:active {
+		box-shadow: 0 0 1px 1px $gray;
+		background: $primary-color;
+	}
+}
+
+.btn-secondary {
+	padding: 0.3rem;
+	color: #fff;
+	background-color: $secondary-color;
+}
+
+.navbar__button {
+	line-height: 1.5;
+	color: $gray;
+	.feather {
+		width: 20px;
+	}
+}

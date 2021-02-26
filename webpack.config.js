@@ -28,7 +28,7 @@ module.exports = {
 	},
 
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'docs'),
 		filename: 'js/[name].js',
 	},
 
@@ -59,17 +59,14 @@ module.exports = {
 							sourceMap: true,
 						},
 					},
-					// {
-					// 	loader: 'postcss-loader',
-					// 	options: {
-					// 		autoprefixer: {
-					// 			browser: ['last 2 versions'],
-					// 		},
-					// 		plugins: () => {
-					// 			autoprefixer;
-					// 		},
-					// 	},
-					// },
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [['postcss-preset-env']],
+							},
+						},
+					},
 					{
 						loader: 'sass-loader',
 						options: {
@@ -86,6 +83,7 @@ module.exports = {
 						options: {
 							name: '[name].[ext]',
 							outputPath: 'images/',
+							publicPath: '../images',
 							useRelativePath: true,
 						},
 					},
@@ -108,10 +106,9 @@ module.exports = {
 	target: 'web',
 
 	devServer: {
-		contentBase: 'dist',
+		contentBase: 'docs',
 		compress: true,
 		port: 5000,
-		watchContentBase: true,
 		hot: true,
 	},
 

@@ -1,39 +1,3 @@
-//Init icons
-// @ts-ignore
-feather.replace();
-
-//Init carousel
-// @ts-ignore
-$('.carousel').carousel({
-	touch: true,
-	interval: 3000,
-});
-
-//Video resize JQuery version
-/* var iframeVideos = $('.iframe-video');
-var videoWrapper = $('body');
-
-iframeVideos.each(function () {
-	$(this)
-		.data('aspectRatio', this.height / this.width)
-
-		.removeAttr('height')
-		.removeAttr('width');
-});
-
-$(window)
-	.resize(function () {
-		var newWidth = videoWrapper.width();
-
-		iframeVideos.each(function () {
-			var el = $(this);
-			console.log(el);
-			el.width(newWidth).height(newWidth * el.data('aspectRatio'));
-		});
-	})
-	.resize();
- */
-
 //Video resize VanillaJS version
 const body = document.querySelector('body');
 

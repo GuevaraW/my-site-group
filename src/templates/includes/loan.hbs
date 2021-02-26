@@ -1,0 +1,72 @@
+<section class="insta-loan" id="loan-section">
+  <div class="container-fluid">
+    <div class="row bg-fluid-1">
+      <button class="btn btn-principal btn-loan-form" data-toggle="collapse" href="#collapse-form" aria-expanded="false"
+        aria-controls="collapse-form">Calculate your loan</button>
+    </div>
+  </div>
+
+  <div class="container collapse show credit-form my-5" id="collapse-form">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>InstaLoan Calculator</h3>
+        <form method="GET" action="#loan-section" name="loanForm" id="loan-form">
+          <div class="form-group">
+            <label for="loanType">Choose type loan</label>
+            <select class="custom-select" name="loanType" id="loanType">
+              <option value="personal">Personal Loan</option>
+              <option value="car">Car Loan</option>
+              <option value="creditLine">Custom Credit Line</option>
+            </select>
+          </div>
+          <fieldset class="months">
+            <legend class="">Months</legend>
+            <div class="form-row">
+              <div class="col-4 form-group">
+                <div class="custom-radio">
+                  <input type="radio" name="month" id="24m" value="24" checked>
+                  <label class="form-control" for="24m">24 Months</label>
+                </div>
+              </div>
+              <div class="col-4 form-group">
+                <div class="custom-radio">
+                  <input type="radio" name="month" id="36m" value="36">
+                  <label class="form-control" for="36m">36 Months</label>
+                </div>
+              </div>
+              <div class="col-4 form-group">
+                <div class="custom-radio">
+                  <input type="radio" name="month" id="48m" value="48">
+                  <label class="form-control" for="48m">48 Months</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-row row-calculate">
+            <div class="col-6 form-group">
+              <label for="amountLoan">Amount</label>
+              <input type="number" name="amount" id="amountLoan" class="form-control" value="10000">
+            </div>
+            <div class="offset-1 col-5 form-group calculate">
+              <button type="submit" class="btn btn-secondary" id="calculate">Calculate</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-5" id="loanResult">
+        <p class="hidden error alert-danger" id="loanError">
+          Try another amount. Min: <span class="min"></span> - Max: <span class="max"></span>
+        </p>
+        <div class="loan-result">
+          <p>Your estimated monthly payment</p>
+          <p><span class="payment">$0</span></p>
+          <p>For a <span class="total">$0</span> loan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row bg-fluid-2"></div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+#video-section {
+	h2 {
+		text-align: center;
+	}
+}
+
+.title-max {
+	font-size: 42px;
+	font-weight: 800;
+	margin: 0;
+}
+
+.video-wrapper {
+	align-items: center;
+	.iframe {
+		max-height: 50vh;
+	}
+	.video-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 4em;
+		text-align: justify;
+		span {
+			display: block;
+			font-size: 1.2em;
+			padding-bottom: 0.5em;
+			font-weight: bold;
+		}
+	}
+}
+@media screen and (min-width: 992px) {
+	.video-wrapper {
+		.video-text {
+			height: 60vh;
+			padding: 5%;
+		}
+	}
+}
