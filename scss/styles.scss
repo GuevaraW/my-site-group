@@ -1,0 +1,96 @@
+$primary-color: #ff9016;
+$secondary-color: #949599;
+$gradient-strong: #e36414;
+$gradient-light: #eba72a;
+$dark-color: #131313;
+$gray: #e9e8e7;
+$gray-light: #fafafa;
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	font-family: 'Nunito Sans', Arial, sans-serif;
+	background: $gray;
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 400;
+	color: $dark-color;
+	width: 100%;
+}
+
+h1 {
+	font-size: 32px;
+}
+h2 {
+	font-size: 28px;
+}
+h3 {
+	font-size: 24px;
+}
+
+label {
+	font-size: 1rem;
+}
+
+.btn-principal {
+	padding: 0.5rem 1.2rem;
+	color: #fff;
+	background: linear-gradient(135deg, $primary-color 0%, $gradient-strong 100%);
+	border-radius: 30px;
+	border-style: solid $gradient-strong;
+	border-style: solid;
+	border-color: $gradient-strong;
+	transition: all 0.1s ease-in;
+	&:hover {
+		color: $dark-color;
+	}
+	&:focus {
+		color: $gray;
+		border: 1px solid $gradient-strong;
+		box-shadow: 0 0 1px 1px $gray;
+	}
+	&:active {
+		color: $gray;
+		border: 1px solid $gradient-strong;
+		box-shadow: 0 0 1px 1px $gray;
+		background: linear-gradient(135deg, $primary-color 0%, $primary-color 100%);
+	}
+}
+
+.btn-secondary {
+	padding: 0.3rem;
+	color: #fff;
+	background-color: $secondary-color;
+}
+
+.hidden {
+	display: none;
+}
+
+@import 'navbar';
+@import 'hero';
+@import 'about';
+@import 'services';
+@import 'video';
+@import 'loan';
+@import 'contact';
+@import 'footer';
+
+@media screen and (min-width: 992px) {
+	body {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	body {
+		line-height: 1.6;
+	}
+
+	h1 {
+		font-size: 42px;
+	}
+}

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # [MySiteGroup](https://guevaraw.github.io/my-site-group) 🏦
 
 Este proyecto es una pagina estática desarrollada como parte de mi **portafolio personal**.
